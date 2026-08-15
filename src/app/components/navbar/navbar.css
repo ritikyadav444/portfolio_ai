@@ -1,0 +1,29 @@
+.nav-scrolled {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.nav-scrolled-dark {
+  background: rgba(6, 6, 17, 0.8);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-scrolled-light {
+  background: rgba(248, 250, 252, 0.85);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}

@@ -1,0 +1,6 @@
+:host ::ng-deep strong {
+  color: #e2e8f0;
+}
+:host-context(html:not(.dark)) ::ng-deep strong {
+  color: #1e293b;
+}

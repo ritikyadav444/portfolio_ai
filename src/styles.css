@@ -1,1 +1,132 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { overflow-x: hidden; font-family: 'Inter', system-ui, sans-serif; }
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(139, 92, 246, 0.5); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(139, 92, 246, 0.7); }
+
+/* ===== Angular component host elements must be block ===== */
+app-root,
+app-navbar,
+app-hero,
+app-about,
+app-experience,
+app-projects,
+app-skills,
+app-education,
+app-leadership,
+app-footer,
+app-chatbot {
+  display: block;
+}
+
+/* ===== Shared utilities ===== */
+
+.gradient-text {
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4, #8b5cf6);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 4s ease infinite;
+}
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 200% center; }
+}
+
+.section-divider {
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  margin-bottom: 2rem;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+html:not(.dark) .glass {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Theme-aware utilities (respond to .dark on <html>) ===== */
+
+.t-page { background: #060611; color: #f1f5f9; }
+html:not(.dark) .t-page { background: #f8fafc; color: #111827; }
+
+.t-heading { color: #fff; }
+html:not(.dark) .t-heading { color: #111827; }
+
+.t-body { color: #d1d5db; }
+html:not(.dark) .t-body { color: #4b5563; }
+
+.t-body-alt { color: #9ca3af; }
+html:not(.dark) .t-body-alt { color: #6b7280; }
+
+.t-muted { color: #9ca3af; }
+html:not(.dark) .t-muted { color: #6b7280; }
+
+.t-subtle { color: #6b7280; }
+html:not(.dark) .t-subtle { color: #9ca3af; }
+
+.t-nav-link { color: #d1d5db; }
+.t-nav-link:hover { color: #fff; }
+html:not(.dark) .t-nav-link { color: #4b5563; }
+html:not(.dark) .t-nav-link:hover { color: #111827; }
+
+.t-icon-link { color: #9ca3af; }
+.t-icon-link:hover { color: #fff; }
+html:not(.dark) .t-icon-link { color: #6b7280; }
+html:not(.dark) .t-icon-link:hover { color: #111827; }
+
+.t-btn-hover:hover { background: rgba(255,255,255,0.1); }
+html:not(.dark) .t-btn-hover:hover { background: #e5e7eb; }
+
+.t-badge { color: #9ca3af; background: rgba(255,255,255,0.05); }
+html:not(.dark) .t-badge { color: #6b7280; background: #f1f5f9; }
+
+.t-skill-tag {
+  background: rgba(255,255,255,0.05);
+  color: #d1d5db;
+  border-color: rgba(255,255,255,0.1);
+}
+.t-skill-tag:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.1);
+}
+html:not(.dark) .t-skill-tag {
+  background: #f1f5f9;
+  color: #374151;
+  border-color: #e5e7eb;
+}
+html:not(.dark) .t-skill-tag:hover {
+  background: #ede9fe;
+  border-color: #c4b5fd;
+}
+
+.t-border-top { border-top: 1px solid rgba(255,255,255,0.05); }
+html:not(.dark) .t-border-top { border-top: 1px solid #e5e7eb; }
+
+.t-strong { color: #fff; }
+html:not(.dark) .t-strong { color: #1e293b; }
+
+.t-em { color: #22d3ee; font-style: normal; font-weight: 600; }
+html:not(.dark) .t-em { color: #7c3aed; }

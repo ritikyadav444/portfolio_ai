@@ -1,0 +1,36 @@
+<section id="about" class="relative py-24 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div [appScrollReveal]="0">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-2 t-heading">
+        About <span class="gradient-text">Me</span>
+      </h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="md:col-span-2" [appScrollReveal]="100">
+        <div class="glass rounded-2xl p-6 sm:p-8">
+          <p class="leading-relaxed text-base sm:text-lg t-body">
+            Full-stack Software Developer with <span class="text-violet-400 font-semibold">1+ year of experience</span> building scalable
+            Node.js/Express backend services, secure REST APIs, and React/Angular frontends for healthcare fintech platforms.
+            Experienced with <span class="text-cyan-400 font-semibold">JWT/RBAC authentication</span>, real-time features (Socket.io),
+            Redis caching, and Agile, Git-based delivery.
+          </p>
+          <p class="leading-relaxed mt-4 text-base t-muted">
+            Currently working at GMoney Pvt. Ltd. where I build full-stack insurance platforms
+            serving 50+ hospital partners, with a focus on performance optimization, security, and real-time data tracking.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4" [appScrollReveal]="200">
+        @for (stat of stats; track stat.label) {
+          <div class="glass rounded-2xl p-6 text-center hover:-translate-y-1 transition-transform duration-300">
+            <div class="text-3xl font-bold gradient-text">{{ stat.value }}</div>
+            <div class="text-sm mt-1 t-muted">{{ stat.label }}</div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

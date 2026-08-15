@@ -1,0 +1,63 @@
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+:host-context(html.dark) .blob { opacity: 0.15; }
+:host-context(html:not(.dark)) .blob { opacity: 0.08; }
+
+.blob-1 {
+  width: 500px; height: 500px;
+  background: #8b5cf6;
+  top: -100px; left: -100px;
+  animation: blob-float 12s ease-in-out infinite;
+}
+.blob-2 {
+  width: 400px; height: 400px;
+  background: #06b6d4;
+  top: 200px; right: -100px;
+  animation: blob-float 10s ease-in-out infinite reverse;
+}
+.blob-3 {
+  width: 350px; height: 350px;
+  background: #a855f7;
+  bottom: -50px; left: 30%;
+  animation: blob-float 14s ease-in-out infinite 2s;
+}
+@keyframes blob-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -40px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background: #8b5cf6;
+  margin-left: 2px;
+  animation: blink 0.8s step-end infinite;
+  vertical-align: text-bottom;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-anim {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.6s forwards;
+}
+.hero-anim-1 { animation-delay: 0.2s; }
+.hero-anim-2 { animation-delay: 0.4s; }
+.hero-anim-3 { animation-delay: 0.6s; }
+.hero-anim-4 { animation-delay: 0.8s; }
+.hero-anim-5 { animation-delay: 1s; }
+.hero-anim-6 { animation-delay: 1.4s; }
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

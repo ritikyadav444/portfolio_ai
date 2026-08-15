@@ -1,0 +1,33 @@
+.timeline-line {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #8b5cf6, #06b6d4);
+}
+@media (min-width: 768px) {
+  .timeline-line { left: 50%; transform: translateX(-50%); }
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 14px;
+  top: 24px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  z-index: 2;
+}
+.dot-dark { border: 3px solid #060611; }
+.dot-light { border: 3px solid #f8fafc; }
+
+@media (min-width: 768px) {
+  .timeline-dot { left: 50%; transform: translateX(-50%); }
+}
+
+:host ::ng-deep strong { color: #fff; }
+:host-context(html:not(.dark)) ::ng-deep strong { color: #1e293b; }
+:host ::ng-deep em { color: #22d3ee; font-style: normal; font-weight: 600; }
+:host-context(html:not(.dark)) ::ng-deep em { color: #7c3aed; }
